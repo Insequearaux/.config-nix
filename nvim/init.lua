@@ -1,0 +1,60 @@
+if vim.loader then
+    vim.loader.enable()
+end
+-- give me a leader button
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- give me good indentation
+vim.cmd("set noautoindent")
+vim.cmd("set smartindent")
+vim.cmd("set nocindent")
+
+-- set termguicolors so my plugins dont break
+vim.opt.termguicolors = true
+
+-- give me knowledge of what os i have
+vim.g.sysname = vim.loop.os_uname().sysname
+local sys_upper = string.upper(vim.g.sysname)
+local systems = {"WINDOWS","LINUX","MINGW","DARWIN"}
+for i=1, 4 do
+  if string.match(sys_upper,systems[i]) then vim.g.env = systems[i] end
+end
+
+if vim.g.env == "WINDOWS" then
+  vim.opt.runtimepath:prepend("C:/Program Files/Git/usr/bin;")
+  vim.g.path_sep = "\\"
+  --vim.env.PATH = "C:/Program Files/Git/usr/bin;" .. vim.env.PATH
+else
+  vim.g.path_sep = "/"
+end
+
+local distro = nil
+local h = io.popen('uname -a')
+local uname = h:read('*a')
+if string.match(uname,"NixOS") then distro = "NixOS" end
+vim.g.distro_name = distro
+h:close()
+
+
+require('globals')
+
+local confdir = vim.fn.stdpath('config')
+
+local myfuncs = vim.fs.joinpath(confdir,"lua","myfunctions")
+for file in vim.fs.dir(myfuncs) do
+  dofile(vim.fs.joinpath(myfuncs,file))
+end
+
+local preplugin = vim.fs.joinpath(confdir,"lua","pre-plugin")
+for file in vim.fs.dir(preplugin) do
+  dofile(vim.fs.joinpath(preplugin,file))
+end
+
+require('plugin-setup')
+
+local postplugin = vim.fs.joinpath(confdir,"lua","post-plugin")
+for file in vim.fs.dir(postplugin) do
+  dofile(vim.fs.joinpath(postplugin,file))
+end
+
