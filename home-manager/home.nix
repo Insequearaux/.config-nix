@@ -5,6 +5,8 @@ imports = [
 	./niri.nix
         ./rofi.nix
         ./hypridle.nix
+        ./syncything.nix
+        ./swaylock.nix
 ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -27,8 +29,20 @@ imports = [
   services.wpaperd = {
       enable = true;
       settings = {
-	default = {
-		path = "/home/ets-c837622227/.config/home-manager/wallpapers/";
+        DP-5 = {
+          path = "/home/ets-c837622227/.config/home-manager/wallpapers/main.jpg";
+        };
+        DP-6 = {
+          path = "/home/ets-c837622227/.config/home-manager/wallpapers/side.jpg";
+        };
+        DP-4 = {
+          path = "/home/ets-c837622227/.config/home-manager/wallpapers/main.jpg";
+        };
+        HDMI-A-4 = {
+          path = "/home/ets-c837622227/.config/home-manager/wallpapers/side.jpg";
+        };
+	any = {
+		path = "/home/ets-c837622227/.config/home-manager/wallpapers";
       };
     };
 };

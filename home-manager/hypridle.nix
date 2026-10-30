@@ -4,9 +4,9 @@
     
     settings = 
     let 
-    lock = "swaylock --clock --indicator --screenshots --effect-blur 10x5 -lk";
+    lock = "swaylock";
     monitorsOn = "${nm} power-on-monitors";
-    monitorsOff = "${nm} power-on-monitors";
+    monitorsOff = "${nm} power-off-monitors";
     nm = "niri msg action";
     in {
       general = {
