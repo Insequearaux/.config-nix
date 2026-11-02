@@ -89,6 +89,7 @@
     extraConfig = ''
       include "${./default-config.kdl}" 
       spawn-at-startup "blueman-applet"
+      spawn-at-startup "nfsm"
       prefer-no-csd
       '';
   };
