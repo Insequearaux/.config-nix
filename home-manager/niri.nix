@@ -12,9 +12,7 @@
         "Mod+N" = {
           spawn = ["firefox"];
         };
-        "Mod+Space" = {
-          spawn = ["rofi" "-show" "drun"];
-        };
+
         "Mod+Period" = {
           spawn = ["emote"];
         };
@@ -23,6 +21,9 @@
         };
         "Mod+E" = {
           spawn = ["cosmic-files"];
+        };
+        "Mod+Space" = {
+          spawn = ["rofi" "-show" "drun"];
         };
       };
       

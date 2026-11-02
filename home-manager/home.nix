@@ -3,10 +3,10 @@
 {
 imports = [
 	./niri.nix
-        ./rofi.nix
         ./hypridle.nix
         ./syncything.nix
         ./swaylock.nix
+        ./rofi.nix
 ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -45,9 +45,6 @@ imports = [
 		path = "/home/ets-c837622227/.config/home-manager/wallpapers";
       };
     };
-};
-home.sessionVariables = {
-	BEMOJI_PICKER_CMD = "fuzzel --dmenu";
 };
 }
 

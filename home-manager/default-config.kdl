@@ -534,9 +534,9 @@ binds {
     //
     // This is a release bind.
     // Press and release Mod by itself to trigger it.
-    //Mod {
-    //release { toggle-overview; }
-    //}
+   // Mod+Tab {
+   // release { toggle-overlay; }
+   // }
 
     // You can also bind both press and release actions like so.
     // If the press action fires, the release action
