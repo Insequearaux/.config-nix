@@ -19,6 +19,22 @@
           devices = ["clay" "minakami" "kurisu" "girl-in-shell"];
           id = "mhseg-kcfz5";
         };
+        ".config" = {
+          path = "~/.config";
+          devices = ["clay" "kurisu"];
+          id = "dotconfig";
+          ignorePatterns = [
+          "*"
+          "!./nvim"
+          "!./home-manager"
+          
+          ];
+        }
+        "nixos" = {
+          path = "/etc/nixos";
+          devices = ["clay" "kurisu"];
+          id = "etcnixoscfg";
+        }
       };
     };
 
