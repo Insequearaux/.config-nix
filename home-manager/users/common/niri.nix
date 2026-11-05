@@ -17,13 +17,19 @@
           spawn = ["emote"];
         };
         "Mod+Shift+S" = {
-          spawn = ["sh" "-c" "slurp | grim -g - - | wl-copy"];
+          spawn-sh = ["grim -g \"$(slurp)\" - | satty -f -"];
+        };
+        "Mod+Shift+V" = {
+          spawn-sh = ["cliphist list | rofi -dmenu | cliphist decode | wl-copy"];#["rofi -modi clipboard:./rofi-cliphist -show clipboard -show-icons"];
         };
         "Mod+E" = {
-          spawn = ["cosmic-files"];
+          spawn = ["dolphin"];
         };
         "Mod+Space" = {
           spawn = ["rofi" "-show" "drun"];
+        };
+        "Mod+Shift+C" = {
+          spawn = ["waylandar-dashboard"];
         };
       };
       
@@ -88,10 +94,12 @@
 
     };
     extraConfig = ''
-      include "${./default-config.kdl}" 
+      include "${./niri.kdl}" 
       spawn-at-startup "blueman-applet"
       spawn-at-startup "nfsm"
       prefer-no-csd
+      spawn-sh-at-startup "wl-paste --watch cliphist store"
+      spawn-at-startup "waylandar-widget"
       '';
   };
 
