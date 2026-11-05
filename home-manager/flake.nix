@@ -22,7 +22,7 @@ in
   {
 	homeConfigurations = {
           "ets-c837622227@clay" = mkUser "ets-c837622227";
-          "taylor@girl-in-shell" = mkUser "taylor";
+          "taylor@kurisu" = mkUser "taylor";
 	};
   };
 }
