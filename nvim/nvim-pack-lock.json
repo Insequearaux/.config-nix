@@ -211,6 +211,10 @@
     "vscode.nvim": {
       "rev": "6439ed89d0e10193f07e92268a321d7c6f6e93ee",
       "src": "https://github.com/Mofiqul/vscode.nvim.git"
+    },
+    "yazi": {
+      "rev": "125f501a7b11fe80d9887df9c64302912bf83c43",
+      "src": "https://github.com/mikavilpas/yazi.nvim.git"
     }
   }
 }

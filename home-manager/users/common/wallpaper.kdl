@@ -1,4 +1,0 @@
-spawn-at-startup "swaybg -o DP-4 -m fill -i ./wallpapers/main.jpg"
-spawn-at-startup "swaybg -o DP-5 -m fill -i ./wallpapers/main.jpg"
-spawn-at-startup "swaybg -o DP-6 -m fill -i ./wallpapers/side.jpg"
-spawn-at-startup "swaybg -o HDMI-A-4 -m fill -i ./wallpapers/side.jpg"
